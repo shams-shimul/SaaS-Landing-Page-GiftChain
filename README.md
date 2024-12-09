@@ -6,8 +6,8 @@ This is a Figma-to-HTML challenge for a beautifully-designed blockchain-based gi
 
 ### Branches:
 
-- **`main`**: Includes the initial challenge files
-- **`solution`**: Includes all the changes added to complete the challenge goals. PR won't be created to **`main`**.
+- **`main`**: Includes all the changes added to complete the challenge goals.
+- **`solution`**: Includes the initial challenge files.
 
 &nbsp;
 
