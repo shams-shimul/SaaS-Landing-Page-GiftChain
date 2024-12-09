@@ -1,25 +1,145 @@
 /*
 Link to Figma: https://scrimba.com/links/santa-saas-figma
 */
-* {
-    --red: rgba(143, 0, 2, 0.83);
-    --light-red: #FFF2F2
-    --dark-red: #470000;
+:root {
+	--red: rgba(143, 0, 2, 0.83);
+	--light-red: #fff2f2;
+	--dark-red: #470000;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+header {
+	padding: 2.5em;
+	padding-bottom: 0;
+	position: relative;
+}
+
+header::after {
+	content: "";
+	position: absolute;
+	top: -85%;
+	left: -50%;
+	width: 100%;
+	height: 70%;
+	background-color: var(--red);
+	z-index: -1;
+	border-radius: 50%;
+	scale: 3.5;
 }
 
 nav {
-    background-color: var(--red);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-ul, li {
-    padding: 0;
-    list-style-type: none;
-}
-img {
-    max-width: 100%;
-}
-
-#customer img {
-    width: 100px;
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-weight: 600;
+	gap: 10px;
 }
 
+menu {
+	display: flex;
+	gap: 1.5em;
+}
+
+menu li {
+	padding: 0;
+	list-style-type: none;
+}
+
+menu li a {
+	text-decoration: none;
+	color: white;
+	letter-spacing: -0.32px;
+}
+
+menu li a {
+	color: var(--light-red);
+}
+
+aside button {
+	padding: 12px 24px;
+	font-size: 14px;
+	letter-spacing: -0.41px;
+	border-radius: 8px;
+	border: 1px solid white;
+}
+
+aside button:first-child {
+	background-color: transparent;
+	color: white;
+}
+
+aside button:last-child {
+	background-color: white;
+	color: var(--red);
+	margin-left: 10px;
+}
+
+header h1 {
+	margin-top: 134px;
+	text-align: center;
+	font-size: 3em;
+	text-transform: capitalize;
+	color: white;
+}
+
+header p {
+	text-align: center;
+	color: white;
+	font-size: 17px;
+	line-height: 32px;
+	letter-spacing: -0.41px;
+	max-width: 580px;
+	margin: auto;
+}
+
+.hero-btn-group {
+	margin-top: 35px;
+	margin-bottom: 82px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.hero-btn-group button {
+	padding: 12px 24px;
+	border-radius: 8px;
+	border: 1px solid white;
+	font-size: 14px;
+	letter-spacing: -0.41px;
+}
+
+.hero-btn-group button:first-child {
+	background-color: white;
+	color: var(--red);
+}
+
+.hero-btn-group button:last-child {
+	background-color: transparent;
+	color: white;
+}
+
+img#hero-img {
+	display: block;
+	max-width: 80%;
+	margin: auto;
+	border-radius: 20px;
+	box-shadow: 20px 20px 50px -12px rgb(0 0 0 / 0.25),
+		0px 0px 50px -12px rgb(0 0 0 / 0.25);
+}
