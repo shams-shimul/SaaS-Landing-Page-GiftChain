@@ -1,3 +1,8 @@
+/* UTILITIES */
+.text-center {
+	text-align: center;
+}
+
 /*
 Link to Figma: https://scrimba.com/links/santa-saas-figma
 */
@@ -18,9 +23,13 @@ body {
 	font-style: normal;
 }
 
+button {
+	font-family: inherit;
+}
+
 header {
 	padding: 2.5em;
-	padding-bottom: 4em;
+	padding-bottom: 3.5em;
 	position: relative;
 	overflow: hidden;
 }
@@ -142,7 +151,7 @@ img#hero-img {
 }
 
 section {
-	padding: 60px 100px;
+	padding: 60px 75px;
 }
 
 #product {
@@ -157,14 +166,14 @@ section > h2 {
 }
 
 section p {
-	text-align: center;
 	font-size: 14px;
 	color: #969696;
 	letter-spacing: -0.41px;
 }
 
 section .cards {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 	gap: 24px;
 	margin-top: 4em;
 }
@@ -191,17 +200,94 @@ section .cards span {
 section .cards h3 {
 	margin: 0;
 	font-size: 16px;
-	white-space: nowrap;
-}
-
-section .cards p {
-	text-align: left;
 }
 
 section .cards a {
 	color: var(--red);
 	font-weight: 600;
 	letter-spacing: -0.41px;
+}
+
+#solution {
+	position: relative;
+	background-color: #f2f2ff;
+	z-index: -2;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	gap: 4em;
+}
+
+#solution > * {
+	flex: 1;
+}
+
+#solution img {
+	width: 100%;
+}
+
+#solution::after {
+	content: "";
+	position: absolute;
+	bottom: -30px;
+	right: -40%;
+	width: 60%;
+	height: 200%;
+	border-radius: 50%;
+	background-color: var(--red);
+	z-index: -1;
+}
+
+#solution h2 {
+	font-size: 2.25em;
+	color: var(--dark-red);
+	line-height: 150%;
+}
+
+#solution h2 + p {
+	line-height: 170%;
+}
+
+#elf {
+	display: flex;
+	align-items: center;
+}
+
+#elf-imgs {
+	display: flex;
+}
+
+#elf-imgs img {
+	width: 24px;
+	height: 24px;
+	border-radius: 100%;
+	border: 1px solid #fff2f2;
+	position: relative;
+}
+
+#elf-imgs img:nth-child(2) {
+	left: -8px;
+}
+
+#elf-imgs img:nth-child(3) {
+	left: -16px;
+}
+
+#elf-imgs + p {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--dark-red);
+	margin: 0;
+	position: relative;
+	left: -8px;
+}
+
+#solution button {
+	margin-top: 24px;
+	background-color: var(--dark-red);
+	color: white;
+	border-radius: 8px;
+	padding: 12px 40px;
 }
 
 #customer img {
