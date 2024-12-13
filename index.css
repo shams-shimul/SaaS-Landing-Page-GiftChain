@@ -25,6 +25,7 @@ body {
 
 button {
 	font-family: inherit;
+	cursor: pointer;
 }
 
 header {
@@ -284,10 +285,171 @@ section .cards a {
 
 #solution button {
 	margin-top: 24px;
-	background-color: var(--dark-red);
+	background-color: var(--red);
+	border: none;
 	color: white;
 	border-radius: 8px;
 	padding: 12px 40px;
+}
+
+#billing-cycle {
+	text-align: center;
+	font-weight: 500;
+	color: #343434;
+	margin-top: 2.5em;
+	margin-bottom: 2em;
+}
+
+#billing-toggle {
+	margin: 0 44px;
+	position: relative;
+	cursor: pointer;
+}
+
+#billing-toggle::before {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70px;
+	height: 32px;
+	background-color: #f2f2ff;
+	border-radius: 48px;
+	/* border: 1px solid var(--dark-red); */
+}
+
+#billing-toggle::after {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 50%;
+	transform: translate(-125%, -50%);
+	width: 24px;
+	height: 24px;
+	background-color: var(--red);
+	border-radius: 48px;
+	transition: all 0.3s ease;
+}
+
+#billing-toggle:checked::after {
+	transform: translate(25%, -50%);
+}
+
+#billing-plans {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 24px;
+}
+
+.billing-plans-card {
+	padding: 24px;
+	border-radius: 14px;
+	box-shadow: 0px 10px 56px 0px rgb(0 0 0 / 5%);
+}
+
+.billing-plans-card p {
+	line-height: 24px;
+}
+
+.billing-plans-card.highlight {
+	background-color: var(--red);
+	color: white;
+}
+
+.billing-plans-card:not(.highlight) h3 {
+	color: var(--dark-red);
+}
+
+.billing-plans-card.highlight p {
+	color: #ececec;
+}
+
+.price {
+	margin-block: 3em;
+}
+
+.amount {
+	font-size: 56px;
+	font-weight: bold;
+	color: var(--dark-red);
+}
+
+.billing-plans-card.highlight .amount {
+	color: white;
+}
+
+.billing-plans-card button {
+	width: 100%;
+	padding: 12px 24px;
+	border-radius: 8px;
+	border: none;
+	background-color: var(--red);
+	color: white;
+	font-weight: bold;
+}
+
+.billing-plans-card.highlight button {
+	background-color: white;
+	color: var(--red);
+}
+
+.billing-plans-card ul {
+	padding-left: 0px;
+	font-size: 14px;
+	margin: 0;
+	margin-top: 3em;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	list-style: none;
+}
+
+.billing-plans-card ul li {
+	padding-left: 30px;
+	position: relative;
+	line-height: 20px;
+}
+
+.billing-plans-card ul li::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background-color: var(--red);
+	border-radius: 100%;
+}
+
+.billing-plans-card.highlight ul li::before {
+	background-color: white;
+}
+
+.billing-plans-card ul li.n-a {
+	text-decoration: line-through;
+	text-decoration-color: var(--red);
+	color: #c4c4c4;
+}
+
+.billing-plans-card ul li.n-a::before {
+	background-color: #c4c4c4;
+}
+
+.billing-plans-card ul li::after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 8px;
+	width: 3px;
+	height: 7px;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	rotate: 45deg;
+}
+
+.billing-plans-card.highlight ul li::after {
+	border-color: var(--red);
 }
 
 #customer img {
