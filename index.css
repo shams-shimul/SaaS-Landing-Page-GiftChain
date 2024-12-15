@@ -1,6 +1,6 @@
 /* UTILITIES */
-.text-center {
-	text-align: center;
+.text-left {
+	text-align: left;
 }
 
 /*
@@ -26,6 +26,11 @@ body {
 button {
 	font-family: inherit;
 	cursor: pointer;
+}
+
+button:disabled {
+	opacity: 0.4;
+	cursor: default;
 }
 
 header {
@@ -152,34 +157,37 @@ img#hero-img {
 }
 
 section {
-	padding: 60px 75px;
+	padding: 100px 75px;
 }
 
 #product {
 	padding-top: 50px;
 }
 
-section > h2 {
+section h2 {
 	margin: 0;
-	font-size: 32px;
+	font-size: 40px;
+	letter-spacing: -0.5px;
 	text-align: center;
 	color: var(--dark-red);
+	text-transform: capitalize;
 }
 
 section p {
 	font-size: 14px;
 	color: #969696;
+	line-height: 170%;
 	letter-spacing: -0.41px;
 }
 
-section .cards {
+#product .cards {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 24px;
 	margin-top: 4em;
 }
 
-section .cards > div {
+#product .cards > div {
 	border: 1px solid #eaeaea;
 	border-radius: 15px;
 	padding: 20px;
@@ -188,7 +196,7 @@ section .cards > div {
 	justify-content: space-between;
 }
 
-section .cards span {
+#product .cards span {
 	display: inline-block !important;
 	background-color: var(--light-red);
 	color: var(--dark-red);
@@ -198,12 +206,16 @@ section .cards span {
 	margin-bottom: 0.75em;
 }
 
-section .cards h3 {
+#product .cards h3 {
 	margin: 0;
 	font-size: 16px;
 }
 
-section .cards a {
+#product .cards p {
+	flex: 1;
+}
+
+#product .cards a {
 	color: var(--red);
 	font-weight: 600;
 	letter-spacing: -0.41px;
@@ -292,10 +304,16 @@ section .cards a {
 	padding: 12px 40px;
 }
 
+#pricing {
+	padding-bottom: 48px;
+	overflow: hidden;
+}
+
 #billing-cycle {
 	text-align: center;
 	font-weight: 500;
 	color: #343434;
+	letter-spacing: -0.41px;
 	margin-top: 2.5em;
 	margin-bottom: 2em;
 }
@@ -316,7 +334,7 @@ section .cards a {
 	height: 32px;
 	background-color: #f2f2ff;
 	border-radius: 48px;
-	/* border: 1px solid var(--dark-red); */
+	/* border: 1px solid var(--red); */
 }
 
 #billing-toggle::after {
@@ -336,7 +354,7 @@ section .cards a {
 	transform: translate(25%, -50%);
 }
 
-#billing-plans {
+.three-column-deck {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 24px;
@@ -414,8 +432,9 @@ section .cards a {
 .billing-plans-card ul li::before {
 	content: "";
 	position: absolute;
-	top: 0;
+	top: 50%;
 	left: 0;
+	transform: translateY(-50%);
 	width: 20px;
 	height: 20px;
 	background-color: var(--red);
@@ -429,7 +448,6 @@ section .cards a {
 .billing-plans-card ul li.n-a {
 	text-decoration: line-through;
 	text-decoration-color: var(--red);
-	color: #c4c4c4;
 }
 
 .billing-plans-card ul li.n-a::before {
@@ -439,8 +457,9 @@ section .cards a {
 .billing-plans-card ul li::after {
 	content: "";
 	position: absolute;
-	top: 5px;
-	left: 8px;
+	top: calc(50% - 2px);
+	left: 5px;
+	transform: translateY(-50%);
 	width: 3px;
 	height: 7px;
 	border-bottom: 1px solid white;
@@ -452,6 +471,87 @@ section .cards a {
 	border-color: var(--red);
 }
 
-#customer img {
-	width: 100px;
+#customer .section-header {
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	align-items: center;
+}
+#customer .section-header h2 {
+	text-align: left;
+	line-height: 82px;
+}
+
+#customer .section-header button {
+	color: var(--dark-red);
+	border: 2px solid var(--dark-red);
+	border-radius: 100%;
+	font-size: 36px;
+	padding: 4px;
+	margin-left: 40px;
+	background-color: transparent;
+	transition: all 0.2s ease;
+}
+
+#customer .section-header button:not(:disabled):hover {
+	background-color: var(--light-red);
+}
+
+.customer-card {
+	border: 1px solid #eaeaea;
+	border-radius: 20px;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	margin-top: 60px;
+}
+
+.customer-card img {
+	width: 72px;
+	height: 72px;
+	border-radius: 100%;
+}
+
+.customer-card .header {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	white-space: nowrap;
+}
+
+.customer-card h3 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: -0.25px;
+	line-height: 28px;
+	color: #343434;
+}
+
+.customer-card p {
+	margin: 6px 0 0 0;
+	letter-spacing: -0.25px;
+	line-height: 22px;
+}
+
+.customer-card blockquote {
+	margin: 0;
+	flex: 1;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: -0.25px;
+	color: #969696;
+	margin-top: 24px;
+}
+
+.customer-card .rating {
+	margin-top: 24px;
+}
+
+.customer-card .rating span {
+	font-variation-settings: "FILL" 1;
+	color: #ef7420;
+}
+
+footer {
+	background-color: #f9f9f9;
 }
